@@ -1,0 +1,18 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class ServiceSeeder extends Seeder
+{
+    /**
+     * Run the datab
+     * ase seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+
+     factory(App\Service::class,10)->create();
+    }
+}
