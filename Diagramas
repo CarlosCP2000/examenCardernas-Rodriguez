@@ -1,0 +1,42 @@
+@startuml
+
+title Classes - platform
+
+professional"1"*--"1..*"Service
+
+class professional {
+  +id
+  +string name
+  +string last_name
+  +type
+  +integer assessment
+}
+
+class Service{
+  +id
+  +date month
+  +integer qualification
+  +string comment
+}
+
+@enduml
+
+//////////////////////////////////////////////////////////
+
+@startuml
+actor User
+node "PC" as SC {
+[App]
+}
+node "SmartPhone" as SA{
+[MobileApp]
+}
+node "Aplication Web" as AW{
+[Web App]-->[BD]
+[BD]
+}
+User--> [App]
+User--> [MobileApp]
+SC -- AW:HTTP
+SA -- AW:HTTP
+@enduml 
